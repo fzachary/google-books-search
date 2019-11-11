@@ -1,0 +1,42 @@
+{
+  "name": "google-books-search",
+  "version": "0.1.0",
+  "description": "React-based app to search Google Books API",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && run npm build",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "Frank Zachary",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.7.9",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fzachary/google-books-search"
+  },
+  "bugs": {
+    "url": "https://github.com/fzachary/google-books-search/issues"
+  }
+}
