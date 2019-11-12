@@ -1,8 +1,8 @@
 .jumbotron {
     background-image: url("/images/books-bg.jpg");
-    height: 741px;
+    height: 336.3px;
     font-family: 'Crimson Text', serif;
-    border-radius: 0;
+    border-radius: 0 !important;
     margin-left: -20px;
     margin-right: -20px;
 }

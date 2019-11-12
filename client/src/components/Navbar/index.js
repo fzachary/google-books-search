@@ -8,14 +8,14 @@ function Navbar() {
             <div className="container">
                 <a className="navbar-brand" href="/">MERN Virtual Library</a>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-right">
-                        <li className="nav-item">
-                            <a className="nav-link" href="/books">My Books</a>
-                        </li>
+                        <ul className="navbar-nav mr-right">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/books">My Books</a>
+                            </li>
                         </ul>
                     </div>
-                </div>
-            </nav>
+            </div>
+        </nav>
     );
 }
 
