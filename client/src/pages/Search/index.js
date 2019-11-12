@@ -48,7 +48,7 @@ class Search extends Component {
                 <Column size="md-12">
                     <div>
                         <span>
-                            <h3>
+                            <h3 className="search-label">
                                 Book Search
                             </h3>
                         </span>
@@ -68,16 +68,16 @@ class Search extends Component {
                         {(this.state.books && this.state.books.length > 0) ? 
                         <List>
                             {this.state.books.map(book => {
-                                console.log(book);
+                                console.log(book.id);
                                 return (
-                                    <div>
-                                        <Book 
-                                            key={book.id}
+                                    <div key={book.id}>
+                                        <Book
                                             authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Information"]}
                                             title={book.volumeInfo.title}
                                             synopsis={book.volumeInfo.description ? book.volumeInfo.description : "No Synopsis Available"}
                                             url={book.volumeInfo.infoLink}
-                                            image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"} />
+                                            image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}>
+                                        </Book>
                                     </div>
                                 )
                             })}

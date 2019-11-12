@@ -1,15 +1,14 @@
 import axios from "axios";
 
 export default {
-    // Shows all saved books
-    getBooks: function() {
-        return axios.get();
-    },
-    // Gets the book with the given id
+    // Gets the saved books
     getAllSaved: function() {
-        return axios.get("/api/saved");
+        return axios.get("/api/books");
     },
     getOneSaved: function(id) {
-        return axios.get("/api/saved/" + id);
+        return axios.get("/api/books/" + id);
+    },
+    removeSaved: function(id) {
+        return axios.delete("/api/books/" + id);
     }
 }

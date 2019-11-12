@@ -1,11 +1,11 @@
 import React from "react";
 
-function List(props) {
+function List({ children }) {
 
-    console.log(props.children);
+    console.log(children);
     return (
         <ul className="list-group">
-            {props.children}
+            {children}
         </ul>
     );
 }

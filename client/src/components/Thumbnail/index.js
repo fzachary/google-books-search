@@ -4,13 +4,9 @@ import "./style.css";
 function Thumbnail(props) {
   console.log(props.src);
     return (
-      <div
-        className="thumbnail"
-        role="img"
-        style={{
-          backgroundImage: `url(${props.src})`
-        }}
-      />
+      <div className="thumbnail">
+        <img src={props.src} alt="Book" />
+      </div>
     );
   }
   
