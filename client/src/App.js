@@ -5,7 +5,6 @@ import { Container } from "./components/Grid";
 import "./App.css"
 import Search from "./pages/Search/index";
 import Saved from "./pages/Saved/index";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

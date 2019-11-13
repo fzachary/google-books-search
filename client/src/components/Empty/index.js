@@ -3,7 +3,7 @@ import React from "react";
 function Empty() {
     return(
         <div>
-            <span className="header">No Books To Display, Enter Your Search Above</span>
+            <h2>No Books To Display</h2>
         </div>
     );
 }

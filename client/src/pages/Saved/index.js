@@ -3,10 +3,7 @@ import API from "../../utils/API";
 import { Column, Row, Container } from "../../components/Grid";
 import List from "../../components/List";
 import Book from "../../components/Book";
-import DeleteBtn from "../../components/DeleteBtn";
-import "./style.css";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import Hero from "../../components/Hero";
 
 class Saved extends Component {
     state = {
@@ -29,16 +26,12 @@ class Saved extends Component {
              .catch(err => console.log(err));
     }
 
-    removeSaved = book => {
-        
-        let id = book._id;
-
+    removeSaved = id => {
         console.log(id);
 
         API.removeSaved(id)
             .then( () => {
                 console.log(`${id} deleted from DB`);
-                toast(`${book.title} by ${book.authors} removed from saved books`);
                 this.loadSaved();
             })
             .catch(err => console.log(err))
@@ -47,28 +40,19 @@ class Saved extends Component {
     render() {
         return (
             <Row>
-                <span className="header">Saved Books</span>
                 <Column size="md-12">
                     {this.state.saved.length ? (
                         <List>
                             {this.state.saved.map(book => (
-                                <Book
-                                    key={book._id}
-                                    authors={book.authors ? book.authors : ["No Author Information"]}
-                                    title={book.title}
-                                    synopsis={book.synopsis ? book.synopsis : "No Synopsis Available"}
-                                    url={book.url}
-                                    image={book.image ? book.image : "#"}>
-                                        <DeleteBtn
-                                            authors={book.authors ? book.authors : ["No Author Information"]}
-                                            title={book.title}
-                                            synopsis={book.synopsis ? book.synopsis : "No Synopsis Available"}
-                                            url={book.url}
-                                            image={book.image ? book.image : "#"} 
-                                            id={book._id} 
-                                            onClick={() => this.removeSaved(book)} />
-                                            
-                                </Book>
+                                <div key={book.id}>
+                                    <Book
+                                        authors={book.authors ? book.authors : ["No Author Information"]}
+                                        title={book.title}
+                                        synopsis={book.synopsis ? book.synopsis : "No Synopsis Available"}
+                                        url={book.url}
+                                        image={book.image ? book.image : "#"}>
+                                    </Book>
+                                </div>
                             ))}
                         </List>
                     ) : (
