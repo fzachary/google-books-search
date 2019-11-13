@@ -6,6 +6,7 @@ import Book from "../../components/Book";
 import Empty from "../../components/Empty";
 import "./style.css";
 import SaveBtn from "../../components/SaveBtn";
+import Hero from "../../components/Hero";
 
 class Search extends Component {
 
@@ -17,7 +18,7 @@ class Search extends Component {
 
     showResults = data => {
         this.setState({
-            books: data.items
+            books: data
         })
         console.log(this.state);
     }
@@ -26,8 +27,19 @@ class Search extends Component {
         let queryUrl = `https://www.googleapis.com/books/v1/volumes?q=${this.state.query}`;
         axios.get(queryUrl)
             .then(res => {
-                console.log(res.data.items);
-                this.showResults(res.data);
+                const validArr = res.data.items.filter(result => 
+                    result.volumeInfo.title &&
+                    result.volumeInfo.infoLink &&
+                    result.volumeInfo.authors &&
+                    result.volumeInfo.description &&
+                    result.volumeInfo.imageLinks &&
+                    result.volumeInfo.imageLinks.thumbnail);
+
+                    console.log(validArr);
+                    this.setState({
+                        books: validArr
+                    })
+                    this.showResults(validArr);
             })
             .catch(err => {
                 console.log(err);
@@ -47,6 +59,7 @@ class Search extends Component {
         console.log(this.props);
         return (
             <Container>
+                <Hero />
                 <Row id="search-row">
                     <Column size="md-12">
                         <div>

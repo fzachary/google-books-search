@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
 import { Container } from "./components/Grid";
 import "./App.css"
 import Search from "./pages/Search/index";
@@ -15,7 +14,6 @@ function App() {
         <header className="App-header"></header>
           <Navbar />
           <Container>
-            <Hero />
             <Router>
               <Switch>
                 <Route exact path="/" component={Search} />
