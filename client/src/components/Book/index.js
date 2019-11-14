@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Column } from "../Grid";
-import SaveBtn from "../SaveBtn";
+import "./style.css";
 
 class Book extends Component {
 
@@ -9,22 +9,31 @@ class Book extends Component {
         console.log(this.props);
 
         return(
-            <li key={this.props.key}>
+            <li>
                 <Container>
                     <Row>
-                        <Column size="xs-8 sm-9">
+                        <Column size="md-12">
                             <div className="card">
-                                <div className="row no-gutters">
-                                    <div className="col-md-4">
-                                        <a href={this.props.url}>
-                                            <img src={this.props.image} class="card-img" alt="Book" />
-                                        </a>
-                                    </div>
-                                    <div className="col-md-8">
-                                        <div className="card-body">
+                                <div className="card-header">
+                                    <Row>
+                                        <Column size="md-9">
                                             <a href={this.props.url}>
                                                 <h3 className="card-title">{this.props.title}</h3>
                                             </a>
+                                        </Column>
+                                        <Column size="md-3">
+                                            {this.props.children}
+                                        </Column>
+                                    </Row>
+                                </div>
+                                <div className="card-body">
+                                    <Row>
+                                        <div className="col-md-2">
+                                            <a href={this.props.url}>
+                                                <img src={this.props.image} className="card-img" alt="Book" />
+                                            </a>
+                                        </div>
+                                        <div className="col-md-10">
                                             <span>
                                                 <h5>{this.props.authors.join(", ")}</h5>
                                             </span>
@@ -37,14 +46,7 @@ class Book extends Component {
                                                 </small>
                                             </p>
                                         </div>
-                                        <SaveBtn
-                                                    authors={this.props.authors ? this.props.authors : ["No Author Information"]}
-                                                    title={this.props.title}
-                                                    synopsis={this.props.synopsis ? this.props.synopsis : "No Synopsis Available"}
-                                                    url={this.props.url}
-                                                    image={this.props.image ? this.props.image : "#"}
-                                                />
-                                    </div>
+                                    </Row>
                                 </div>
                             </div>
                         </Column>

@@ -1,0 +1,9 @@
+.card {
+    margin-top: 24px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+}
+
+.card-title {
+    margin-bottom: 0 !important;
+} 
