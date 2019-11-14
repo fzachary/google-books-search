@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Column, Row, Container } from "../../components/Grid";
+import Hero from "../../components/Hero";
 import List from "../../components/List";
 import Book from "../../components/Book";
 import DeleteBtn from "../../components/DeleteBtn";
@@ -45,36 +46,46 @@ class Saved extends Component {
 
     render() {
         return (
-            <Row>
-                <span className="header">Saved Books</span>
-                    <Column size="md-12">
-                        {this.state.saved.length ? (
-                            <List>
-                                {this.state.saved.map(book => (
-                                    <Book
-                                    key={book._id}
-                                    authors={book.authors ? book.authors : ["No Author Information"]}
-                                    title={book.title}
-                                    synopsis={book.synopsis ? book.synopsis : "No Synopsis Available"}
-                                    url={book.url}
-                                    image={book.image ? book.image : "#"}>
-                                        <DeleteBtn
+            <div>
+                <Container>
+                    <Hero />
+                    <Row>
+                        <div className="card text-center">
+                            <div className="card-body bg-dark">
+                                <h3 className="header" id="saved">
+                                    Saved Books
+                                </h3>
+                            </div>
+                        </div>
+                        <Column size="md-12">
+                            {this.state.saved.length ? (
+                                <List>
+                                    {this.state.saved.map(book => (
+                                        <Book
+                                            key={book._id}
                                             authors={book.authors ? book.authors : ["No Author Information"]}
                                             title={book.title}
                                             synopsis={book.synopsis ? book.synopsis : "No Synopsis Available"}
                                             url={book.url}
-                                            image={book.image ? book.image : "#"} 
-                                            id={book._id} 
-                                            onClick={() => this.removeSaved(book)} />
-
-                                </Book>
-                            ))}
-                        </List>
-                    ) : (
-                        <h3>No results to display...</h3>
-                    )}
-                    </Column>
-                </Row>
+                                            image={book.image ? book.image : "#"}>
+                                            <DeleteBtn
+                                                authors={book.authors ? book.authors : ["No Author Information"]}
+                                                title={book.title}
+                                                synopsis={book.synopsis ? book.synopsis : "No Synopsis Available"}
+                                                url={book.url}
+                                                image={book.image ? book.image : "#"} 
+                                                id={book._id} 
+                                                onClick={() => this.removeSaved(book)} />
+                                        </Book>
+                                    ))}
+                                </List>
+                            ) : (
+                            <h3>No results to display...</h3>
+                            )}
+                        </Column>
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

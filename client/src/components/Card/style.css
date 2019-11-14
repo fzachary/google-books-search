@@ -1,0 +1,14 @@
+.card-header h3 {
+    font-family: 'Crimson Text', serif;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.card {
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 0;
+    line-height: 1;
+}

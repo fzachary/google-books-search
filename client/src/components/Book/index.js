@@ -17,12 +17,19 @@ class Book extends Component {
                                 <div className="card-header">
                                     <Row>
                                         <Column size="md-9">
-                                            <a href={this.props.url}>
-                                                <h3 className="card-title">{this.props.title}</h3>
-                                            </a>
+                                            <h3 className="card-title">
+                                                <a href={this.props.url}>
+                                                    {this.props.title}
+                                                </a>
+                                            </h3>
                                         </Column>
                                         <Column size="md-3">
                                             {this.props.children}
+                                            <button className="btn btn-light">
+                                                <a href={this.props.url}>
+                                                VIEW
+                                                </a>
+                                            </button>
                                         </Column>
                                     </Row>
                                 </div>

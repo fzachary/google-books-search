@@ -5,4 +5,13 @@
 
 .btn-secondary {
     float: right;
-} 
+}
+
+i {
+    margin-right: 12px;
+    color: #ffffff;
+}
+
+strong {
+    color: #ffffff;
+}

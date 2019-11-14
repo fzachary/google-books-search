@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Row, Column, Container } from "../../components/Grid";
+import Hero from "../../components/Hero";
+import Card from "../../components/Card";
+import Form from "../../components/Form";
 import List from "../../components/List";
 import Book from "../../components/Book";
 import Empty from "../../components/Empty";
@@ -53,26 +56,25 @@ class Search extends Component {
         console.log("Query: ", this.state.query);
     }
 
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.searchBooks();
+      };
+
     render() {
         console.log(this.props);
         return (
             <Container>
+                <Hero />
                 <Row id="search-row">
                     <Column size="md-12">
-                        <div>
-                            <input className="form-control form-control-lg"
-                                    autoComplete="off"
-                                    type="text"
-                                    name="query"
-                                    placeholder='"Harry Potter", "J.K. Rowling", etc.'
-                                    onChange={this.handleInputChange}
+                        <Card title="Book Search" icon="book-open">
+                            <Form
+                                handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit}
+                                query={this.state.query}
                             />
-                            <button type="submit" 
-                                    className="btn btn-secondary btn-lg"
-                                    onClick={this.searchBooks}
-                            >Search
-                            </button>
-                        </div>
+                        </Card>
                     </Column>
                 </Row>
                 <Row>
