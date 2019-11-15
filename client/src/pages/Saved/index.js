@@ -80,7 +80,11 @@ class Saved extends Component {
                                     ))}
                                 </List>
                             ) : (
-                            <h3>No results to display...</h3>
+                            <div className="card text-center">
+                                <div className="card-body bg-dark">
+                                    <h3 className="header" id="saved">Loading Saved Books</h3>
+                                </div>
+                            </div>
                             )}
                         </Column>
                     </Row>

@@ -1,0 +1,20 @@
+.footer {
+    color: #f5f5f5 !important;
+    margin-top: 24px;
+}
+
+footer span {
+    font-size: 18px;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: grey;
+}
+
+.fab {
+    padding-right: 9px;
+}

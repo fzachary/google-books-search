@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Navbar() {
+function Navbar(active) {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -10,7 +10,10 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-right">
                             <li className="nav-item">
-                                <a className="nav-link" href="/books">My Books</a>
+                                <a className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} href="/">Search</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={window.location.pathname === "/books" ? "nav-link active" : "nav-link"} href="/books">Saved</a>
                             </li>
                         </ul>
                     </div>

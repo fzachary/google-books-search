@@ -1,3 +1,7 @@
+.card.text-center {
+    border-color: grey;
+}
+
 .header {
     font-family: 'Crimson Text', serif;
 }

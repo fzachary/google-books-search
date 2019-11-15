@@ -3,8 +3,10 @@ import "./style.css";
 
 function Empty() {
     return(
-        <div>
-            <span className="header">No Books To Display. Enter Your Search Above.</span>
+        <div className="card text-center">
+            <div className="card-body bg-dark">
+                <h3 className="header" id="saved">No Books To Display. Enter Your Search Above.</h3>
+            </div>
         </div>
     );
 }

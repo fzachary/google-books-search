@@ -5,6 +5,7 @@ import { Container } from "./components/Grid";
 import "./App.css"
 import Search from "./pages/Search/index";
 import Saved from "./pages/Saved/index";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               </Switch>
             </Router>
           </Container>
+        <Footer />
       </div>    
   );
 }
