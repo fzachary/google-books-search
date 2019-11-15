@@ -6,7 +6,7 @@
 
 ### required npm packages
 
-`mongoose`, `axios`, `react-router-dom`, `react-toastify`
+`mongoose`, `express`, `axios`, `react-router-dom`, `react-toastify`
 
 ### Technologies Implemented
 
