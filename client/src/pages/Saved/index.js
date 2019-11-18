@@ -21,7 +21,6 @@ class Saved extends Component {
     loadSaved = () => {
         API.getAllSaved()
             .then(res => {
-                console.log(res.data);
                 this.setState({ 
                     saved: res.data
                 })
@@ -32,8 +31,6 @@ class Saved extends Component {
     removeSaved = book => {
 
         let id = book._id;
-
-        console.log(id);
 
         API.removeSaved(id)
             .then(() => {

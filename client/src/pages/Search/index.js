@@ -22,7 +22,6 @@ class Search extends Component {
         this.setState({
             books: data
         })
-        console.log(this.state);
     }
 
     searchBooks = () => {
@@ -36,7 +35,6 @@ class Search extends Component {
                     result.volumeInfo.description &&
                     result.volumeInfo.imageLinks &&
                     result.volumeInfo.imageLinks.thumbnail);
-                    console.log(validArr);
                     this.setState({
                         books: validArr
                     })
@@ -53,7 +51,6 @@ class Search extends Component {
         this.setState({
             [name]: value
         });
-        console.log("Query: ", this.state.query);
     }
 
     handleFormSubmit = event => {
@@ -62,7 +59,6 @@ class Search extends Component {
       };
 
     render() {
-        console.log(this.props);
         return (
             <Container>
                 <Hero />
@@ -83,7 +79,6 @@ class Search extends Component {
                             {(this.state.books && this.state.books.length > 0) ? (
                             <List>
                                 {this.state.books.map(book => {
-                                    console.log(book.id);
                                     return (
                                         <div key={book.id}>
                                             <Book
