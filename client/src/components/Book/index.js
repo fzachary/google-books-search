@@ -4,7 +4,6 @@ import "./style.css";
 
 class Book extends Component {
 
-    
     render() {
         return(
             <li>
